@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Nav from "./Nav";
 import TileList from "./TileList"
+import Filter from "./Filter"
 
 import hogs from "../porkers_data";
 
@@ -8,13 +9,20 @@ import hogs from "../porkers_data";
 
 
 function App() {
-	console.log(hogs)
+
+	const [showGreased, setShowGreased] = useState('All')
+
+	const toggleGreased = (e) => {
+		setShowGreased((showGreased) === e.target.value)
+		console.log(e.target.value)
+		console.log(showGreased)
+	}
+
 	return (
 		<div className="App">
 			<Nav />
-			<TileList
-
-				hogs={hogs} />
+			<Filter hogs={hogs} toggleGreased={toggleGreased} /> <br />
+			<TileList hogs={hogs} />
 		</div>
 	);
 }
