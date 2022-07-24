@@ -12,7 +12,8 @@ const TileList = ({ hogs }) => {
                     specialty={element.specialty}
                     weight={element.weight}
                     greased={element.greased}
-                    // highestMedal={element."highest medal acheived"}
+                    highestMedal={element["highest medal achieved"]
+                    }
                     key={index}
 
 
